@@ -14,23 +14,20 @@ namespace coinflipper
 
         private void FlipperButton_Clicked(object sender, EventArgs e)
         {
-            Random rnd = new Random();
             int indice = Convert.ToInt32(picker.SelectedIndex);
-            int maxValue = 1;
-            int RandonNumber = rnd.Next(maxValue);
+            int moeda = new Random().Next(2);
 
-            if (RandonNumber == 0) {
-                LabelSorteio.Text = "cara";
+            if (moeda == 0) {
+                ImageSorteio.Source = "cara.png";
             }
-            if (RandonNumber == 1)
+            if (moeda == 1)
             {
-                LabelSorteio.Text = "coroa";
-
+                ImageSorteio.Source = "coroa.png";
             }
 
-            if (indice == RandonNumber)
+            if (indice == moeda)
             {
-                LabelResult.Text = "parabens você acertou";
+                LabelResult.Text = "Parabéns você acertou";
             }
             else
             {
